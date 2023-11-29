@@ -1,0 +1,5 @@
+- Let user choose destination
+- Let user choose video download quality (best quality can be really slow)
+    - Or maybe download the .webm file and auto-convert it with ffmpeg
+- Add more formats
+- Create full installer for all needed files
