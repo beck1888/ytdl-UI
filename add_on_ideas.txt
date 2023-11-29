@@ -3,3 +3,4 @@
     - Or maybe download the .webm file and auto-convert it with ffmpeg
 - Add more formats
 - Create full installer for all needed files
+- Fix frozen pop-up
