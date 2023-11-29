@@ -56,7 +56,7 @@ received_list = return_selections() # Gets the selections and inputs from the GU
 
 url = received_list[1] # Set the URL to the second item in the list returned
 
-# Build the command to run imn the terminal
+# Build the command to run in the user's terminal
 if received_list[0] == 'audio (.mp3)': # If the user only wants audio
     command = f"youtube-dl --extract-audio --audio-format mp3 '{url}'"
 else: # If audio is not selected, the other option (mp4) is what the user wants
