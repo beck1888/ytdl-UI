@@ -4,16 +4,21 @@
 import tkinter as tk # deals with gui
 from tkinter import ttk # same module as above, just called in a specific way
 import os # used to run the formatted yt-dl command in the users terminal
+import sys
+import threading
 
 # Define functions
 def show_ask_UI_window():
     def on_submit():
+        # root.destroy()
         global selected_option
         global entered_text
         selected_option = dropdown.get()
         entered_text = entry.get()
+        print("Point 1 clear")
+        # close tkinter
         popup.destroy()
-        root.destroy() # Kill the Python app process (stop bouncing in the dock)
+        root.destroy()
 
     # Create the main window
     root = tk.Tk()
@@ -44,6 +49,7 @@ def show_ask_UI_window():
 
     # Run the main loop (needed for tkinter to function)
     root.mainloop()
+    # root.quit()
 
 def return_selections(): # Outputs selected format and pasted URL which becomes a list
     list_of_return = [selected_option, entered_text]
@@ -63,6 +69,17 @@ else: # If audio is not selected, the other option (mp4) is what the user wants
     command = f"youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' '{url}'"
 
 
+
 # Run the command (print only for now - testing)
+import time
 print(command)
+to_run = command
+
+for i in range(10):
+    time.sleep(0.4)
+    percent = str(10 * round(((10 * (i+1)))/10))
+    print(f"{percent}% done")
+
+'''What if instead, the progress of the download is just displayed in another tkinter window'''
+
 # os.system(f"{command}")
